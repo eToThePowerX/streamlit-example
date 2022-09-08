@@ -9,11 +9,10 @@ from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 
 ##Read data
-data_set = pd.read_csv('/Dataset.txt',sep= '\t', header=None)
+data_set = pd.read_csv('Dataset.txt',sep= '\t', header=None)
 data_copy = data_set.copy()
 
-target = data_set[61]
-st.write(target)
+
 
 chart_data = pd.DataFrame(
      np.random.randn(20, 3),
