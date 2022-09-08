@@ -8,9 +8,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 
-##Read data
-data_set = pd.read_csv('Dataset.txt',sep= '\t', header=None)
-data_copy = data_set.copy()
+
 
 
 
