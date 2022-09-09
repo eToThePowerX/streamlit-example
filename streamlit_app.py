@@ -8,7 +8,7 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 
-st.write(1578)
+data_set = pd.read_csv('Dataset.txt',sep= '\t', header=None)
 #chart_data = pd.DataFrame(
  #    np.random.randn(20, 3),
 #     columns=['a', 'b', 'c'])
