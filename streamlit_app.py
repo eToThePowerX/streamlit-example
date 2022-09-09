@@ -20,9 +20,6 @@ X_train, X_test, y_train, y_test = train_test_split(data_set,target, test_size=0
 clf = CatBoostClassifier()
 clf.fit(X_train, y_train,eval_set=(X_test, y_test),use_best_model=True,verbose = False)
 
-st.write('Test Report')
-st.write(classification_report(y_test, clf.predict(X_test)))
-st.write('Train Report')
 st.write(classification_report(y_train, clf.predict(X_train)))
 
 
