@@ -12,7 +12,21 @@ data_set = pd.read_csv('Dataset.txt',sep= '\t', header=None)
 data_copy = data_set.copy()
 
 target = data_set[61]
-st.write(target)
+data_set = data_set.drop(columns = 61)
+
+X_train, X_test, y_train, y_test = train_test_split(data_set,target, test_size=0.33, random_state=42)
+
+##Catboost
+clf = CatBoostClassifier()
+clf.fit(X_train, y_train,eval_set=(X_test, y_test),use_best_model=True,verbose = False)
+
+st.write('Test Report Catboost')
+st.write(classification_report(y_test, clf.predict(X_test)))
+st.write('Train Report Catboost')
+st.write(classification_report(y_train, clf.predict(X_train)))
+
+
+
 #chart_data = pd.DataFrame(
  #    np.random.randn(20, 3),
 #     columns=['a', 'b', 'c'])
